@@ -1,2 +1,2 @@
 # Biological-Evolution-Simulation
-A test simulation for convergent evolution within a system
+This is a biology simulation written for my IB internal assessment. I am a Canadian high school student currently taking the biology HL course provided by the International Baccalaureate program in the 2024-2025 school year. The white circles on the screen represent organisms, and the small red pellets represent food. The goal of the simulation is to determine whether evolution is deterministic. Essentially, the experiment is to determine whether the starting conditions of an ecosystem affect the characteristics that are eventually developed in later generations. In this case, the characteristic being manipulated is the average size of all the organisms.
