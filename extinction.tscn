@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk4xhg05ai5kh"]
+
+[ext_resource type="Script" uid="uid://6sc3g4ywq1ap" path="res://extinction.gd" id="1_2s257"]
+
+[node name="Extinction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2s257")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 473.0
+offset_right = 624.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+
+[node name="Extinction" type="Label" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 34.0
+offset_right = 687.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 40
+text = "Extinction!!"
+
+[node name="Tips" type="Label" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 123.0
+offset_right = 919.0
+offset_bottom = 172.0
+text = "Try lowering the amount of pellets needed to survive
+or the initial number of organisms in the simulation"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 218.0
+offset_right = 933.0
+offset_bottom = 453.0
+autowrap_mode = 3
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

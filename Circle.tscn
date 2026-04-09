@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://i6hgmp680ned"]
+
+[ext_resource type="Script" uid="uid://dpjxung5yocgb" path="res://circle.gd" id="1_j0i48"]
+[ext_resource type="Texture2D" uid="uid://cxxcjfh24bk6s" path="res://sprite.png" id="1_ortn3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j0i48"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j0i48"]
+radius = 15.0
+
+[node name="circle" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_j0i48")
+gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_j0i48")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -1.42109e-14)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_ortn3")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_j0i48")
+
+[node name="Counter" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+text = "EE"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

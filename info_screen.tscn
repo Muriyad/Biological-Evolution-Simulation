@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://dthdrppcpt7py"]
+
+[ext_resource type="Script" uid="uid://dfm3t5qgyyjjp" path="res://info_screen.gd" id="1_rtefb"]
+
+[node name="InfoScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtefb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="WhatIsThis" type="Label" parent="."]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 16.0
+offset_right = 706.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 31
+text = "What is This?"
+horizontal_alignment = 1
+
+[node name="info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 114.0
+offset_right = 1075.0
+offset_bottom = 343.0
+text = "This is a biology simulation written for my IB internal assessment. I am a Canadian high school student currently taking the biology HL course provided by the International Baccalaureate program in the 2024-2025 school year. The white circles on the screen represent organisms, and the small red pellets represent food. The goal of the simulation is to determine whether evolution is deterministic. Essentially, the experiment is to determine whether the starting conditions of an ecosystem affect the characteristics that are eventually developed in later generations. In this case, the characteristic being manipulated is the average size of all the organisms."
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 403.0
+offset_right = 620.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

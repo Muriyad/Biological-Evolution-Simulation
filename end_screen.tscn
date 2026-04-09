@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyjot5kmdsebc"]
+
+[ext_resource type="Script" uid="uid://dtl4xcuinppn7" path="res://end_screen.gd" id="1_my301"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_my301")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Results" type="Label" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 34.0
+offset_right = 690.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 40
+text = "Results"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 218.0
+offset_right = 936.0
+offset_bottom = 451.0
+autowrap_mode = 3
+
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 473.0
+offset_right = 627.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

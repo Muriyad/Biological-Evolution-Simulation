@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=3 uid="uid://d34wy70ag76ym"]
+
+[ext_resource type="Script" uid="uid://benjpiqplbuaj" path="res://title_screen.gd" id="1_dbioi"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dbioi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 470.0
+offset_right = 620.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
+[node name="CircleCount" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 52.0
+offset_right = 835.0
+offset_bottom = 68.0
+min_value = 1.0
+max_value = 50.0
+value = 10.0
+
+[node name="CircleCountLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 73.0
+offset_right = 834.0
+offset_bottom = 96.0
+text = "Organism Count: 10"
+horizontal_alignment = 1
+
+[node name="SizeBias" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 128.0
+offset_right = 835.0
+offset_bottom = 144.0
+value = 50.0
+
+[node name="SizeBiasLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 149.0
+offset_right = 782.0
+offset_bottom = 172.0
+text = "Size Bias: 50"
+horizontal_alignment = 1
+
+[node name="NumberOfGenerations" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 204.0
+offset_right = 835.0
+offset_bottom = 220.0
+min_value = 10.0
+max_value = 1000.0
+step = 10.0
+value = 100.0
+
+[node name="NumberOfGenerationsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 225.0
+offset_right = 732.0
+offset_bottom = 248.0
+text = "Number of Generations: 100"
+horizontal_alignment = 1
+
+[node name="PelletsNeeded" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 280.0
+offset_right = 835.0
+offset_bottom = 296.0
+min_value = 1.0
+value = 20.0
+
+[node name="PelletsNeededLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 301.0
+offset_right = 732.0
+offset_bottom = 324.0
+text = "Pellets Needed to Survive: 20"
+horizontal_alignment = 1
+
+[node name="InfoButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 595.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 25
+text = "Info"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="value_changed" from="CircleCount" to="." method="_on_circle_count_value_changed"]
+[connection signal="value_changed" from="SizeBias" to="." method="_on_size_bias_value_changed"]
+[connection signal="value_changed" from="NumberOfGenerations" to="." method="_on_number_of_generations_value_changed"]
+[connection signal="value_changed" from="PelletsNeeded" to="." method="_on_pellets_needed_value_changed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
